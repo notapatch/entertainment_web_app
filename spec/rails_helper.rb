@@ -61,4 +61,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.before(:each, type: :system, js: true) do
+    BROWSER = if ENV["BROWSER"].present?
+                ENV["BROWSER"].to_sym
+              else
+                :headless_chrome
+              end
+
+    driven_by :selenium, using: BROWSER, screen_size: [1400, 1400]
+  end
 end
