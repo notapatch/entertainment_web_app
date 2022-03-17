@@ -60,6 +60,13 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
+  # RUBY LINTING
+  gem 'rubocop',  require: false
+  # Optional rubocop enhancements
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails',  require: false
+  gem 'rubocop-rspec',  require: false
+
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
