@@ -67,6 +67,9 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  # N+1 queries fixed
+  gem "bullet"
+
   # Automatically reload Hotwire Turbo when app files are modified
   gem "hotwire-livereload", "~> 1.0"
 
