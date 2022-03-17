@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-orange:            hsl(  0, 97%,  63%);     /* #FC4747 */
+
+    --color-blue-gray-100:     hsl(223,  23%,  46%);    /* #5a6a90 */
+    --color-blue-gray-200:     hsl(223,  36%,  14%);    /* #161D2F */
+    --color-blue-gray-300:     hsl(224,  30%,   9%);    /* #10141E */
+
+    --color-white:             hsl(  0,   0%, 100%);    /* #FFFFFF */
+    --color-gray-100:          hsl(225,   3%,  77%);    /* #C3C3C6 */
+    --color-gray-200:          hsl(222,   6%,  57%);    /* #8b8f98 */
+    --color-gray-300:          hsl(223,   3%,  54%);    /* #8b8f98 */
+    --color-gray-400:          hsl(222,   6%,  27%);    /* #414349 */
+
+    --color-background:                var(--color-blue-gray-300);
+    --color-background-text:           var(--color-white);
+    --color-background-text-muted:     var(--color-gray-300);
+    --color-background-text-secondary: var(--color-gray-100);
+    --color-background-error:          var(--color-orange);
+
+    --color-surface:                   var(--color-blue-gray-200);
+    --color-surface-text:              var(--color-white);
+    --color-surface-text-muted:        var(--color-gray-200);
+    --color-surface-text-secondary:    var(--color-blue-gray-100);
+
+    --color-primary:                   var(--color-orange);
+    --color-primary-hover:             var(--color-white);
+    --color-primary-text:              var(--color-white);
+    --color-primary-text-hover:        var(--color-blue-gray-200);
+  }
+}
