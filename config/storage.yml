@@ -5,3 +5,14 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
+
+# Active Storage Setup
+# Example also in ProductFeedbackApplication
+# Configuration from dotenv
+
+amazon:
+  service: S3
+  access_key_id: <%= ENV["ACCESS_KEY_ID"] %>          # short key 20ish chars
+  secret_access_key: <%= ENV["SECRET_ACCESS_KEY"] %>  # long key: > 20 chars
+  region: <%= ENV["REGION"] %>                        # Examples us-east-1 eu-west-1
+  bucket: <%= ENV["BUCKET"] %>                        # Name of bucket
