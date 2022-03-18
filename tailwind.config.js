@@ -53,6 +53,17 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Outfit', ...defaultTheme.fontFamily.sans]
+    },
+    fontSize: {
+      '3xs': ['11px'],
+      '2xs': ['12px'],
+      xs:    ['13px'],
+      sm:    ['14px'],
+      base:  ['15px'],
+      lg:    ['18px'],
+      xl:    ['20px'],
+      '2xl': ['24px'],
+      '3xl': ['32px'],
     }
   }
 }
