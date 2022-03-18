@@ -51,6 +51,9 @@ gem "image_processing", "~> 1.2"
 # Framework for building reusable, testable & encapsulated view components in Rails
 gem "view_component"
 
+# Amazon supported ruby sdk to access s3 services
+gem "aws-sdk-s3", require: false
+
 group :development, :test do
   gem "bundler-audit"
   gem "brakeman"
