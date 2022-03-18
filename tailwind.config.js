@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     './app/components/**/*',
@@ -48,6 +50,9 @@ module.exports = {
           'primary-text-hover':        'var(--color-primary-text-hover)',
         }
       }
+    },
+    fontFamily: {
+      sans: ['Outfit', ...defaultTheme.fontFamily.sans]
     }
   }
 }
