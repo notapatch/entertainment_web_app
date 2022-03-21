@@ -20,11 +20,15 @@ class ShowObject
   end
 
   def regular_image_path
-    @data.dig("thumbnail", "trending", "large")
+    @data.dig("thumbnail", "regular", "large")
   end
 
   def trending
     @data["isTrending"]
+  end
+
+  def trending_image_path
+    @data.dig("thumbnail", "trending", "large")
   end
 
   def year

@@ -2,24 +2,18 @@ require "rails_helper"
 require "objects/show_object"
 
 RSpec.describe ShowObject, type: :objects do
-  describe "#title" do
-    it "returns title" do
-      data = { "title" => "hello" }
+  describe "#bookmarked" do
+    it "returns expected bookmarked when true" do
+      data = { "isBookmarked" => true }
 
-      expect(described_class.new(data).title).to eq "hello"
+      expect(described_class.new(data).bookmarked).to be true
     end
 
-    it "returns title with separators unchanged" do
-      data = { "title" => "hello you" }
+    it "returns expected bookmarked when false" do
+      data = { "isBookmarked" => false }
 
-      expect(described_class.new(data).title).to eq "hello you"
+      expect(described_class.new(data).bookmarked).to be false
     end
-  end
-
-  it "returns year" do
-    data = { "year" => 2020 }
-
-    expect(described_class.new(data).year).to eq 2020
   end
 
   describe "#category" do
@@ -33,6 +27,20 @@ RSpec.describe ShowObject, type: :objects do
       data = { "category" => "TV Series" }
 
       expect(described_class.new(data).category).to eq :tv_series
+    end
+  end
+
+  describe "#title" do
+    it "returns title" do
+      data = { "title" => "hello" }
+
+      expect(described_class.new(data).title).to eq "hello"
+    end
+
+    it "returns title with separators unchanged" do
+      data = { "title" => "hello you" }
+
+      expect(described_class.new(data).title).to eq "hello you"
     end
   end
 
@@ -56,21 +64,19 @@ RSpec.describe ShowObject, type: :objects do
     end
   end
 
-  describe "bookmarked" do
-    it "returns expected bookmarked when true" do
-      data = { "isBookmarked" => true }
+  describe "regular_image_path" do
+    it "returns expected path" do
+      data = { "thumbnail" => { "regular" =>
+                                  {
+                                    "large" => "./app/assets/images/thumbnails/the-diary/regular/large.jpg"
+                                  } } }
 
-      expect(described_class.new(data).bookmarked).to be true
-    end
-
-    it "returns expected bookmarked when false" do
-      data = { "isBookmarked" => false }
-
-      expect(described_class.new(data).bookmarked).to be false
+      expect(described_class.new(data).regular_image_path.to_s)
+        .to eq "./app/assets/images/thumbnails/the-diary/regular/large.jpg"
     end
   end
 
-  describe "trending" do
+  describe "#trending" do
     it "returns expected trending when true" do
       data = { "isTrending" => true }
 
@@ -84,15 +90,21 @@ RSpec.describe ShowObject, type: :objects do
     end
   end
 
-  describe "regular_image_path" do
+  describe "#trending_image_path" do
     it "returns expected path" do
       data = { "thumbnail" => { "trending" =>
-       {
-         "large" => "./app/assets/images/thumbnails/the-diary/regular/large.jpg"
-       } } }
+                                  {
+                                    "large" => "./app/assets/images/thumbnails/the-diary/trending/large.jpg"
+                                  } } }
 
-      expect(described_class.new(data).regular_image_path.to_s)
-        .to eq "./app/assets/images/thumbnails/the-diary/regular/large.jpg"
+      expect(described_class.new(data).trending_image_path.to_s)
+        .to eq "./app/assets/images/thumbnails/the-diary/trending/large.jpg"
     end
+  end
+
+  it "returns year" do
+    data = { "year" => 2020 }
+
+    expect(described_class.new(data).year).to eq 2020
   end
 end
