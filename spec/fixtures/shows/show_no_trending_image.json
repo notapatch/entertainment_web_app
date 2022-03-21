@@ -1,0 +1,15 @@
+{
+  "title": "Beyond Earth",
+  "thumbnail": {
+    "regular": {
+      "small": "./app/assets/images/thumbnails/beyond-earth/regular/small.jpg",
+      "medium": "./app/assets/images/thumbnails/beyond-earth/regular/medium.jpg",
+      "large": "./app/assets/images/thumbnails/beyond-earth/regular/large.jpg"
+    }
+  },
+  "year": 2019,
+  "category": "Movie",
+  "rating": "PG",
+  "isBookmarked": false,
+  "isTrending": true
+}
