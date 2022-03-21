@@ -12,4 +12,10 @@ class Show < ApplicationRecord
     attachable.variant :large, resize_to_limit: [940, 460]
     attachable.variant :small, resize_to_limit: [480, 280]
   end
+
+  validates :category,
+            :rating,
+            :title,
+            :year,
+            presence: true
 end
