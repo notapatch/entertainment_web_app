@@ -54,6 +54,8 @@ gem "view_component"
 # Amazon supported ruby sdk to access s3 services
 gem "aws-sdk-s3", require: false
 
+gem "devise"
+
 group :development, :test do
   gem "bundler-audit"
   gem "brakeman"
