@@ -41,3 +41,6 @@
 
 # Ignore rubymine idea files
 .idea/*
+
+# Ignore redis dump file
+dump.rdb
