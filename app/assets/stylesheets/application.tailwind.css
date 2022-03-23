@@ -33,3 +33,29 @@
     --color-primary-text-hover:        var(--color-blue-gray-200);
   }
 }
+
+@layer base {
+  .heading-lg {
+    @apply text-3xl font-light;
+  }
+
+  .heading-md {
+    @apply text-2xl font-light;
+  }
+
+  .heading-sm {
+    @apply text-2xl font-medium;
+  }
+
+  .heading-xs {
+    @apply text-lg font-medium;
+  }
+
+  .body-md {
+    @apply text-base font-light;
+  }
+
+  .body-sm {
+    @apply text-xs font-light;
+  }
+}
