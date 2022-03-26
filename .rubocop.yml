@@ -43,5 +43,9 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/MixinUsage:
+  Exclude:
+    - db/seeds.rb
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
