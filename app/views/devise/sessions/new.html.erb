@@ -8,8 +8,14 @@
       Login
     </h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <fieldset class="">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: "false"}) do |f| %>
+      <fieldset class="mt-4 flex flex-col">
+
+        <% if flash[:alert] %>
+          <p class="text-skin-surface-text-error self-center">
+            <%= flash[:alert] %>
+          </p>
+        <% end %>
 
         <div class="field">
           <%= f.label :email, class: "sr-only" %><br />
