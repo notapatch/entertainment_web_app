@@ -1,0 +1,29 @@
+<div class="w-full max-w-100">
+  <div class="mt-14 p-6 mx-6 sm:mx-0 rounded-xl bg-skin-surface text-skin-surface-text">
+    <h3 class="mt-4 text-2xl">Test Logins</h3>
+    <table class="min-w-full">
+      <thead class="text-skin-surface-text-muted">
+      <tr>
+        <th scope="col" class="py-3 text-left heading-xs uppercase tracking-wider">
+          Email
+        </th>
+        <th scope="col" class="py-3 text-left heading-xs uppercase tracking-wider">
+          Password
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% users.order(:id).each do |user| %>
+        <tr class="bg-skin-surface">
+          <td class="py-1 body-md">
+            <%= user.email %>
+          </td>
+          <td class="py-1 body-md">
+            "password"
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
