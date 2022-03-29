@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: { customer: 0, staff: 1 }, _suffix: true
+
+  has_one_attached :avatar
 end
