@@ -28,6 +28,9 @@ module.exports = {
          'primary':         'var(--color-primary)',
         }
       },
+      maxWidth: {
+       '100': '25rem',
+      },
       textColor: {
         skin: {
           'background-text':           'var(--color-background-text)',
