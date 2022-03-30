@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :customers, path: "customers"
+  devise_for :customers,
+           path: "customers",
+           controllers: { sessions: "customers/authentication/sessions" }
 
   unauthenticated do
     root "landing_pages#show"
