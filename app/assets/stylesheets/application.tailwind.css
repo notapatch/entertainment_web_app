@@ -58,4 +58,12 @@
   .body-sm {
     @apply text-xs font-light;
   }
+
+  .input-base {
+    @apply body-md focus:outline-none text-skin-surface-text bg-skin-surface pb-4 pl-4 border-b border-skin-surface-text-secondary focus:border-skin-surface-text cursor-pointer caret-skin-primary;
+  }
+
+  .button-base {
+    @apply body-md rounded-lg bg-skin-primary text-skin-primary-text cursor-pointer;
+  }
 }
