@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resource :landing_page, only: [:show]
 
   resources :customers, only: [], module: :customers do
+    resources :bookmarks, only: [:index]
     resource :homes, only: [:show]
     resources :movies, only: [:index]
     resources :tvs, only: [:index]
