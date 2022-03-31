@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Customer@Customer::Movies#index" do
   it "can visit customer movies page" do
-    customer = create(:customer)
+    customer = create(:customer, :avatared)
     sign_in customer
     visit customer_movies_path(customer)
 
