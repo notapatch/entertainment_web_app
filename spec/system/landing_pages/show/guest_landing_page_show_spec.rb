@@ -14,7 +14,7 @@ RSpec.describe "Guest@LandingPage#show", type: :system do
   end
 
   it "can login as customer" do
-    create(:customer, email: "customer1@example.com")
+    create(:customer, :avatared, email: "customer1@example.com")
     visit landing_page_path
 
     click_on "Sign In"

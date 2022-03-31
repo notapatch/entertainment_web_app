@@ -1,0 +1,61 @@
+<nav class="flex justify-between items-center p-4 bg-skin-surface sm:rounded-lg sm:m-6">
+  <%= helpers.show_svg "icon-nav-logo.svg" %>
+  <ul class="flex space-x-6">
+    <li>
+      <%= link_to_unless_current(helpers.show_svg("icon-nav-home.svg"),
+                                 helpers.customer_homes_path(@current_customer),
+                                 class: "text-skin-surface-text-secondary hover:text-skin-background-text",
+                                 aria: { label: "Navigate to Home." }) do %>
+        <div id="home"
+             class="text-skin-background-text"
+             aria-label="Home is shown.">
+          <%= helpers.show_svg("icon-nav-home.svg") %>
+        </div>
+      <%  end %>
+    </li>
+    <li>
+      <%= link_to_unless_current(helpers.show_svg("icon-nav-movies.svg"),
+                                 customer_movies_path(@current_customer),
+                                 class: "text-skin-surface-text-secondary hover:text-skin-background-text",
+                                 aria: { label: "Navigate to Movies." }) do %>
+        <div id="movies"
+             class="text-skin-background-text"
+             aria-label="Movies are shown.">
+          <%= helpers.show_svg("icon-nav-movies.svg") %>
+        </div>
+      <%  end %>
+    </li>
+    <li>
+      <%= link_to_unless_current(helpers.show_svg("icon-nav-tv-series.svg"),
+                                 customer_tvs_path(@current_customer),
+                                 class: "text-skin-surface-text-secondary hover:text-skin-background-text",
+                                 aria: { label: "Navigate to TV Series." }) do %>
+        <div id="tvs"
+             class="text-skin-background-text"
+             aria-label="TV Series are shown.">
+          <%= helpers.show_svg("icon-nav-tv-series.svg") %>
+        </div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to_unless_current(helpers.show_svg("icon-nav-bookmark.svg"),
+                                 customer_bookmarks_path(@current_customer),
+                                 class: "text-skin-surface-text-secondary hover:text-skin-background-text",
+                                 aria: { label: "Navigate to Bookmark." }) do %>
+        <div id="bookmarks"
+             class="text-skin-background-text"
+             aria-label="Bookmarked shows are shown.">
+          <%= helpers.show_svg("icon-nav-bookmark.svg") %>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <%= image_tag @current_customer.avatar,
+                    alt: "Image of logged in user.",
+                    class: "inline-block h-6 w-6 rounded-full ring-2 ring-white"
+      %>
+    </li>
+  </ul>
+</nav>
