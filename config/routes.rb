@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :customers, only: [], module: :customers do
     resource :homes, only: [:show]
     resources :movies, only: [:index]
+    resources :tvs, only: [:index]
   end
 end
