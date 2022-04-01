@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EntertainmentWebApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap" rel="stylesheet">
+    <% if Rails.env.development? %>
+      <%= javascript_include_tag "hotwire-livereload", defer: true %>
+    <% end %>
+  </head>
+
+  <body class="bg-skin-background font-sans">
+    <p class="notice text-skin-background-text"><%= notice %></p>
+    <p class="alert text-skin-background-text"><%= alert %></p>
+    <div class="lg:grid lg:grid-cols-[128px_1fr] lg:h-screen lg:max-h-[960px]">
+      <div class="justify-self-end lg:w-24">
+        <%= render(NavigationComponent.new(current_customer: current_customer)) %>
+      </div>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>
