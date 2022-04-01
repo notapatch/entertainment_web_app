@@ -1,6 +1,8 @@
-<nav class="flex justify-between items-center p-4 bg-skin-surface sm:rounded-lg sm:m-6">
-  <%= helpers.show_svg "icon-nav-logo.svg" %>
-  <ul class="flex space-x-6">
+<nav class="flex lg:flex-col lg:h-full justify-between lg:justify-start items-center p-4 bg-skin-surface sm:rounded-lg sm:mt-6 sm:mx-6 lg:mt-8 lg:-mb-16 lg:mx-0">
+  <ul class="lg:mt-[35px] mb-2">
+    <%= helpers.show_svg "icon-nav-logo.svg" %>
+  </ul>
+  <ul class="flex space-x-6 lg:flex-col lg:space-x-0 lg:space-y-6 lg:mt-[75px] lg:mb-8">
     <li>
       <%= link_to_unless_current(helpers.show_svg("icon-nav-home.svg"),
                                  helpers.customer_homes_path(@current_customer),
@@ -50,7 +52,7 @@
       <% end %>
     </li>
   </ul>
-  <ul>
+  <ul class="lg:relative lg:mt-auto lg:bottom-8">
     <li>
       <%= image_tag @current_customer.avatar,
                     alt: "Image of logged in user.",
