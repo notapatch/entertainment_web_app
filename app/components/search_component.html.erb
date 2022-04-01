@@ -1,0 +1,13 @@
+<div class="w-full p-4">
+  <%= form_with url: "#", method: :get do |f| %>
+    <%= f.label :q, "Search", class: "sr-only block text-sm font-medium" %>
+    <div class="relative">
+      <div class="absolute">
+        <%= helpers.show_svg "icon-search.svg" %>
+      </div>
+      <%= f.text_field :q,
+                       class:"heading-md pl-12 w-full focus:outline-none text-skin-surface-text bg-skin-background focus:border-skin-surface-text cursor-pointer caret-skin-primary",
+                       placeholder: @placeholder %>
+    </div>
+  <% end %>
+</div>
