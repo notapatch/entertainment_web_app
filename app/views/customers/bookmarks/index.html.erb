@@ -1,5 +1,37 @@
-<div class="ml-5 mt-6 sm:mt-7 lg:mt-16">
+<div class="mt-6 sm:mt-7 lg:mt-16">
   <%= render(SearchComponent.new(placeholder: "Search for bookmarked shows")) %>
 </div>
-<h2 class="text-skin-background-text">Bookmarked Movies</h2>
-<h2 class="text-skin-background-text">Bookmarked TV Series</h2>
+
+<section id="bookmarked-movies" class="mx-4 text-skin-background-text">
+  <h2 class="text-skin-background-text">Bookmarked Movies</h2>
+
+  <div id="articles" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-7 sm:gap-y-8 lg:gap-x-10">
+    <% @bookmarked_movies.each do |show| %>
+      <article class="">
+        <h3><%= show.title %></h3>
+        <%= show.year %>
+        <%= show.category %>
+        <%= show.rating %>
+        <%= show.bookmarked %>
+        <%= show.trending %>
+      </article>
+    <% end %>
+  </div>
+</section>
+
+<section id="bookmarked-tv-series" class="mx-4 mt-6 sm:mt-10 text-skin-background-text">
+  <h2 class="text-skin-background-text">Bookmarked TV Series</h2>
+
+  <div id="articles" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-7 sm:gap-y-8 lg:gap-x-10">
+    <% @bookmarked_tv_shows.each do |show| %>
+      <article class="">
+        <h3><%= show.title %></h3>
+        <%= show.year %>
+        <%= show.category %>
+        <%= show.rating %>
+        <%= show.bookmarked %>
+        <%= show.trending %>
+      </article>
+    <% end %>
+  </div>
+</section>
