@@ -1,5 +1,7 @@
 module Customers
   class MoviesController < BaseController
-    def index; end
+    def index
+      @movies = Show.where(category: "movie")
+    end
   end
 end

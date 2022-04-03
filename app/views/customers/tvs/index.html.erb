@@ -1,4 +1,20 @@
-<div class="ml-5 mt-6 sm:mt-7 lg:mt-16">
+<div class="mt-6 sm:mt-7 lg:mt-16">
   <%= render(SearchComponent.new(placeholder: "Search for TV series")) %>
 </div>
-<h2 class="text-skin-background-text">TV Series</h2>
+
+<section class="mx-4 text-skin-background-text">
+  <h2 class="text-skin-background-text">TV Series</h2>
+
+  <div id="articles" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-7 sm:gap-y-8 lg:gap-x-10">
+    <% @tv_series.each do |tv_series| %>
+      <article class="">
+        <h3><%= tv_series.title %></h3>
+        <%= tv_series.year %>
+        <%= tv_series.category %>
+        <%= tv_series.rating %>
+        <%= tv_series.bookmarked %>
+        <%= tv_series.trending %>
+      </article>
+    <% end %>
+  </div>
+</section>
