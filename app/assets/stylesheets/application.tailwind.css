@@ -59,6 +59,10 @@
     @apply text-xs font-light;
   }
 
+  .body-3xs {
+    @apply text-3xs font-light;
+  }
+
   .input-base {
     @apply body-md focus:outline-none text-skin-surface-text bg-skin-surface pb-4 pl-4 border-b border-skin-surface-text-secondary focus:border-skin-surface-text cursor-pointer caret-skin-primary;
   }

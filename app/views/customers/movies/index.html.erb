@@ -6,15 +6,6 @@
   <h2 class="text-skin-background-text">Movies</h2>
 
   <div id="articles" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-7 sm:gap-y-8 lg:gap-x-10">
-    <% @movies.each do |movie| %>
-      <article class="">
-        <h3><%= movie.title %></h3>
-        <%= movie.year %>
-        <%= movie.category %>
-        <%= movie.rating %>
-        <%= movie.bookmarked %>
-        <%= movie.trending %>
-      </article>
-    <% end %>
+   <%= render(ShowComponent.with_collection(@movies)) %>
   </div>
 </section>
