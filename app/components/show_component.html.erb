@@ -1,0 +1,24 @@
+<article class="">
+  <div class="relative">
+    <%= image_tag @show.regular_image %>
+    <span class="absolute top-2 right-2"><%= @show.bookmarked %></span>
+  </div>
+  <ul class="body-3xs flex mt-2">
+    <li class="list-none mr-5 text-skin-background-text-secondary"><%= @show.year %></li>
+    <li class="list-disc text-skin-background-text-muted">
+      <span class="text-skin-background-text-secondary">
+        <%= helpers.human_enum_name(model_name: :show,
+                                    enum_name: :category,
+                                    enum_key: @show.category) %>
+      </span>
+    </li>
+    <li class="list-disc ml-5 text-skin-background-text-muted">
+      <span class="text-skin-background-text-secondary">
+        <%= helpers.human_enum_name(model_name: :show,
+                                    enum_name: :rating,
+                                    enum_key: @show.rating) %>
+      </span>
+    </li>
+  </ul>
+  <h3 class="mt-1 body-sm"><%= @show.title %></h3>
+</article>
