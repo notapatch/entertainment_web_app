@@ -30,3 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      show:
+        categories:
+          tv_series: "TV Series"
+          movie: "Movie"
+
+        ratings:
+          e: "E"
+          u: "U"
+          pg: "PG"
+          "18": "18+"
