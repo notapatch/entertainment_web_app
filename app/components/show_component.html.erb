@@ -1,7 +1,9 @@
 <article class="">
   <div class="relative">
     <%= image_tag @show.regular_image %>
-    <span class="absolute top-2 right-2"><%= @show.bookmarked %></span>
+    <span class="absolute top-2 right-2">
+      <%= render(BookmarkComponent.new(bookmarked: @show.bookmarked)) %>
+    </span>
   </div>
   <ul class="body-3xs flex mt-2">
     <li class="list-none mr-5 text-skin-background-text-secondary"><%= @show.year %></li>
