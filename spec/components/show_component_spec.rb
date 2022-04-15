@@ -8,9 +8,11 @@ RSpec.describe ShowComponent, type: :component do
                   title: "Power of the Dog",
                   category: "movie",
                   rating: "18",
-                  year: 1999)
+                  year: 1999,
+                  bookmarked: true)
 
     html = render_inline(described_class.new(show: show)).to_html
+    expect(html).to include("Bookmarked")
     expect(html).to include("1999")
     expect(html).to include("Movie")
     expect(html).to include("18+")
